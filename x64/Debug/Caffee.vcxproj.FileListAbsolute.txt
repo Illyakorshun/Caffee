@@ -1,1 +1,2 @@
 C:\Users\student\Desktop\Cafe-main\x64\Debug\Caffee.exe
+C:\Users\student\RiderProjects\Caffee\x64\Debug\Caffee.exe

@@ -14,7 +14,7 @@ public:
     MenuItem* getItems();
     int getSize();
 private:
-    MenuItem items[4];
+    MenuItem items[8];
     int size;
 };
 #endif
