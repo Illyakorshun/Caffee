@@ -1,20 +1,20 @@
 #ifndef CAFE_H
 #define CAFE_H
 
-#include "../Order/Order.h"
+#include <memory>
 #include "../Menu/Menu.h"
-#include "../../Data/Data.h"
-
-
+#include "../Order/Order.h"
+#include "../Data/Data.h" // Corrected include for Data
 class Cafe {
 public:
-    Cafe(Menu* menu, Data* data);
+    Cafe(std::shared_ptr<Menu> menu, std::shared_ptr<Data> data);
     void takeOrder(Order& order);
-    Menu* getMenu();
-    double calculateTotal(Order& order);
+    std::shared_ptr<Menu> getMenu();
+    double calculateTotal(const Order& order); // Pass Order by const reference to avoid unnecessary copies
+
 private:
-    Menu* menu;
-    Data* data;
+    std::shared_ptr<Menu> menu;
+    std::shared_ptr<Data> data;
 };
 
 #endif

@@ -1,7 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "../../lib/lib.h"
+#include <string>
+#include <vector>
 
 struct MenuItem {
     std::string name;
@@ -9,12 +10,18 @@ struct MenuItem {
 };
 
 class Menu {
+private:
+    std::vector<MenuItem> drinks;
+    std::vector<MenuItem> hotDishes;
+    std::vector<MenuItem> snacks;
+
 public:
     Menu();
-    MenuItem* getItems();
-    int getSize();
-private:
-    MenuItem items[8];
-    int size;
+    void showCategoryMenu();
+    void showItems(int category);
+    void continueToNextMenu();
+    int getSize(int category);  
+    std::vector<MenuItem> getItems(int category);
 };
+
 #endif

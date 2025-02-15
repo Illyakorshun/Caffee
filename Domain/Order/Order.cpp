@@ -1,14 +1,13 @@
-// Order.cpp
 #include "Order.h"
 
-void Order::addItem(MenuItem item) {
-    items[size++] = item;
+void Order::addItem(const MenuItem& item) {
+    items.push_back(item);
 }
 
-MenuItem* Order::getItems() {
+const std::vector<MenuItem>& Order::getItems() const {
     return items;
 }
 
-int Order::getSize() {
-    return size;
+int Order::getSize() const {
+    return items.size();
 }

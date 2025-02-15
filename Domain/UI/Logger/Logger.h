@@ -1,12 +1,10 @@
-// Logger.h
 #ifndef LOGGER_H
 #define LOGGER_H
 
 #include <string>
 #include "../../lib/lib.h"
 
-enum Colors
-{
+enum Colors {
     Default = 7,
     Blue = 1,
     Green = 2,
@@ -24,8 +22,7 @@ enum Colors
     BrightWhite = 15
 };
 
-class Logger
-{
+class Logger {
 public:
     static bool is_print_logs;
 
@@ -35,11 +32,11 @@ public:
     static const unsigned short _warning = 14;
     static const unsigned short _default = 7;
 
-    static void debug(std::string message);
-    static void info(std::string message);
-    static void error(std::string message);
-    static void warning(std::string message);
-    static void log(std::string message, Colors color);
+    static void debug(const std::string& message);
+    static void info(const std::string& message);
+    static void error(const std::string& message);
+    static void warning(const std::string& message);
+    static void log(const std::string& message, Colors color);
 };
 
 #endif

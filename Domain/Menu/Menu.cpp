@@ -1,22 +1,23 @@
 #include "Menu.h"
-
-
-Menu::Menu() : size(8) {
-    items[0] = {"Coffee", 25.0};
-    items[1] = {"Tea", 20.0};
-    items[2] = {"Cake", 30.0};
-    items[3] = {"Ice cream", 40.0};
-    items[4] = {"Water", 10.0};
-    items[5] = {"Pasta", 80.0};
-    items[6] = {"Soup", 60.0};
-    items[7] = {"Chips", 25.0};
+    #include <iostream>
+    #include <vector>
     
-}
-
-MenuItem* Menu::getItems() {
-    return items;
-}
-
-int Menu::getSize() {
-    return size;
-}
+    Menu::Menu() {
+        drinks = {{"Coffee", 25.0}, {"Tea", 20.0}, {"Water", 10.0}};
+        hotDishes = {{"Soup", 60.0}, {"Pasta", 80.0}, {"Pizza", 100.0}, {"Burger", 70.0}, {"Steak", 120.0}};
+        snacks = {{"Cake", 30.0}, {"Ice cream", 40.0}, {"Chips", 25.0}};
+    }
+    
+    int Menu::getSize(int category) {
+        if (category == 0) return drinks.size();
+        if (category == 1) return hotDishes.size();
+        if (category == 2) return snacks.size();
+        return 0;
+    }
+    
+    std::vector<MenuItem> Menu::getItems(int category) {
+        if (category == 0) return drinks;
+        if (category == 1) return hotDishes;
+        if (category == 2) return snacks;
+        return {};
+    }
